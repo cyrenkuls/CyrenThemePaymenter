@@ -1,0 +1,86 @@
+@import 'tailwindcss';
+
+@plugin '@tailwindcss/forms' {
+  strategy: class;
+}
+
+@plugin '@tailwindcss/typography';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@source "../views";
+@source "../../../extensions/**/*.blade.php";
+
+@theme {
+  /* Font Family */
+  --font-sans: 'Inter', 'Nunito', ui-sans-serif, system-ui, sans-serif;
+}
+
+@theme inline {
+  /* Branding Colors */
+  --color-primary: #222831;
+  --color-secondary: #393e46;
+  
+  /* Neutral Colors */
+  --color-neutral: #393e46;
+  
+  /* Text Colors */
+  --color-base: #fff;
+  --color-muted: #bdbdbd;
+  --color-inverted: #222831;
+  
+  /* State Colors */
+  --color-success: #00adb5;
+  --color-error: #ff5722;
+  --color-warning: #ffc107;
+  --color-inactive: #757575;
+  --color-info: #00adb5;
+  
+  /* Background Colors */
+  --color-background: #23272f;
+  --color-background-secondary: #393e46;
+}
+
+@layer base {
+  html, body {
+    color: var(--color-base);
+    background: var(--color-background);
+    font-family: var(--font-sans);
+    letter-spacing: 0.01em;
+  }
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-radius: 8px;
+    border-color: var(--color-neutral, currentColor);
+    box-shadow: none !important;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--color-base);
+    font-weight: 700;
+  }
+  a {
+    color: #00adb5;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  a:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+  .prose, .dark .prose-invert {
+    color: var(--color-base);
+  }
+}
+
+@utility text-nowrap {
+  text-wrap: nowrap;
+}
+
+@utility text-wrap {
+  text-wrap: wrap;
+}
+
+@import './easymde.css'
