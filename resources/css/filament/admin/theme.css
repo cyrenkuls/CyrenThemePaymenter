@@ -1,0 +1,53 @@
+@import '../../../../vendor/filament/filament/resources/css/theme.css';
+
+@config 'tailwind.config.js';
+
+@layer base {
+  html, body, .fi-body {
+    color: #fff;
+    background: #23272f;
+    font-family: 'Inter', 'Nunito', ui-sans-serif, system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  *,
+  ::after,
+  ::before {
+    border-radius: 8px;
+    border-color: #393e46;
+    box-shadow: none !important;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: #fff;
+    font-weight: 700;
+  }
+  a {
+    color: #00adb5;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  a:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+  .fi-btn, .fi-input, .fi-select, .fi-card, .fi-sidebar, .fi-navbar {
+    background: #393e46;
+    color: #fff;
+    border-radius: 8px;
+    border: 1px solid #23272f;
+    box-shadow: none !important;
+  }
+  .fi-btn-primary {
+    background: #00adb5;
+    color: #fff;
+    border: none;
+  }
+  .fi-btn-primary:hover {
+    background: #007b8a;
+    color: #fff;
+  }
+  .fi-table th, .fi-table td {
+    background: #23272f;
+    color: #fff;
+    border-color: #393e46;
+  }
+}
